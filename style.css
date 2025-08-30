@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #EAEFEF;
+    color: #333446;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #333446;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(51,52,70,0.1);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.input-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.input-section h2 {
+    color: #333446;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.input-type-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.type-btn {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #7F8CAA;
+    background: white;
+    color: #7F8CAA;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.type-btn.active,
+.type-btn:hover {
+    background: #7F8CAA;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333446;
+}
+
+.required-indicator {
+    color: #333446;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #B8CFCE;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #7F8CAA;
+}
+
+#addBtn {
+    width: 100%;
+    padding: 12px;
+    background: #7F8CAA;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#addBtn:hover {
+    background: #6B7AA0;
+}
+
+.lists-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.list-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.list-container h3 {
+    color: #333446;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #B8CFCE;
+}
+
+.items-list {
+    list-style: none;
+    min-height: 200px;
+}
+
+.item {
+    background: #EAEFEF;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #7F8CAA;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(51,52,70,0.15);
+}
+
+.item.event {
+    border-left-color: #B8CFCE;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.item-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.item-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #7F8CAA;
+}
+
+.item-name {
+    font-weight: 600;
+    color: #333446;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.item.completed .item-name {
+    text-decoration: line-through;
+    color: #7F8CAA;
+    opacity: 0.7;
+}
+
+.item.completed {
+    opacity: 0.8;
+    background: #F5F7F7;
+}
+
+.item.completed .item-details {
+    opacity: 0.7;
+}
+
+.item-details {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: #7F8CAA;
+}
+
+.item-time {
+    font-weight: 500;
+}
+
+.item-date {
+    font-style: italic;
+}
+
+.delete-btn {
+    background: #333446;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: auto;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background: #2A2B39;
+}
+
+.empty-message {
+    text-align: center;
+    color: #7F8CAA;
+    font-style: italic;
+    padding: 40px 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .lists-section {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+}

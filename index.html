@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TO DO App</h1>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <h2>Add New Item</h2>
+                
+                <div class="input-type-selector">
+                    <button id="taskBtn" class="type-btn active" data-type="task">Task</button>
+                    <button id="eventBtn" class="type-btn" data-type="event">Event</button>
+                </div>
+
+                <form id="itemForm">
+                    <div class="form-group">
+                        <label for="itemName">Name:</label>
+                        <input type="text" id="itemName" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemTime">Time:</label>
+                        <input type="time" id="itemTime" name="time" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemDate">Date <span id="dateRequired" class="required-indicator" style="display: none;">*</span>:</label>
+                        <input type="date" id="itemDate" name="date">
+                    </div>
+
+                    <button type="submit" id="addBtn">Add Task</button>
+                </form>
+            </div>
+
+            <div class="lists-section">
+                <div class="list-container">
+                    <h3>Tasks</h3>
+                    <ul id="tasksList" class="items-list"></ul>
+                </div>
+
+                <div class="list-container">
+                    <h3>Events</h3>
+                    <ul id="eventsList" class="items-list"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
